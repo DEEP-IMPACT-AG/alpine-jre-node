@@ -1,4 +1,4 @@
-FROM node:6-alpine
+FROM node:6.14-alpine
 
 # install the necessary dependencies
 RUN apk add --no-cache bash supervisor openssl wget
