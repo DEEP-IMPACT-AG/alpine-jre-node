@@ -1,7 +1,7 @@
 FROM node:8.11-alpine
 
 # install the necessary dependencies
-RUN apk add --no-cache bash supervisor openssl wget bind-tools
+RUN apk update && apk add --no-cache bash supervisor openssl wget bind-tools
 
 # The following is taken from the official alpine openjdk-8 docker image:
 # https://github.com/docker-library/openjdk/blob/master/8/jre/alpine/Dockerfile
@@ -22,8 +22,8 @@ RUN { \
 ENV JAVA_HOME /usr/lib/jvm/java-1.8-openjdk/jre
 ENV PATH $PATH:/usr/lib/jvm/java-1.8-openjdk/jre/bin:/usr/lib/jvm/java-1.8-openjdk/bin
 
-ENV JAVA_VERSION 8u131
-ENV JAVA_ALPINE_VERSION 8.131.11-r2
+ENV JAVA_VERSION 8u171
+ENV JAVA_ALPINE_VERSION 8.171.11-r0
 
 RUN set -x && \
     apk add --no-cache openjdk8-jre="$JAVA_ALPINE_VERSION" && \
