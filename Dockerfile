@@ -1,7 +1,7 @@
 FROM node:8.11-alpine
 
 # install the necessary dependencies
-RUN apk add --no-cache bash supervisor openssl wget
+RUN apk add --no-cache bash supervisor openssl wget bind-tools
 
 # The following is taken from the official alpine openjdk-8 docker image:
 # https://github.com/docker-library/openjdk/blob/master/8/jre/alpine/Dockerfile
